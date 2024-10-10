@@ -46,8 +46,16 @@ const Work = () => {
           <h1 className="text-[28vw] leading-none font-medium tracking-tight select-none">
             Work
           </h1>
-                  <div className="absolute top-0 w-full h-full">
-                      {images.map((elem,index) => (<img className="w-60 rounded-lg" src={elem.url} />))}
+          <div className="absolute top-0 w-full h-full">
+            {images.map((elem, index) => {
+             return elem.isActive && (
+                <img
+                  className="absolute w-60 rounded-lg -translate-x-[50%] -translate-y-[50%]"
+                  style={{ top: elem.top, left: elem.left }}
+                  src={elem.url}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
