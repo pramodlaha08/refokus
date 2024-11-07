@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Marquee = () => {
+const Marquee = ({ imagesUrl }) => {
   return (
-    <div>
-      <h1>Marquee</h1>
+    <div className='flex py-5 gap-28 overflow-hidden items-center '>
+      {imagesUrl.map((url,id)=> <img src={url} key={id} alt="images" className='flex-shrink-0 w-28' />)}
     </div>
   );
 };
