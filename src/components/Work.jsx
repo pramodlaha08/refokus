@@ -41,13 +41,21 @@ const Work = () => {
   ];
   return (
     <div>
-      <div className="w-full">
+      <div className="w-full mt-10">
         <div className="max-w-screen-xl mx-auto text-center relative">
           <h1 className="text-[28vw] leading-none font-medium tracking-tight select-none">
             Work
           </h1>
-                  <div className="absolute top-0 w-full h-full">
-                      {images.map((elem,index) => (<img className="w-60 rounded-lg" src={elem.url} />))}
+          <div className="absolute top-0 w-full h-full">
+            {images.map((elem, index) => {
+             return elem.isActive && (
+                <img
+                  className="absolute w-60 rounded-lg -translate-x-[50%] -translate-y-[50%]"
+                  style={{ top: elem.top, left: elem.left }}
+                  src={elem.url}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

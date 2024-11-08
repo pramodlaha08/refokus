@@ -29,7 +29,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <Button />
+      <Button title="Get Started" />
     </div>
   );
 };
